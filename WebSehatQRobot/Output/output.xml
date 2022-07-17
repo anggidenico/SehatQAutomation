@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220715 20:36:36.565" rpa="false" schemaversion="3">
+<suite id="s1" name="Mobile" source="D:\WebSehatQRobot\mobile.robot">
+<test id="s1-t1" name="First Test cases" line="21">
+<kw name="Open calculator">
+<msg timestamp="20220715 20:36:37.127" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>newCommandTimeout=2500</arg>
+<arg>appActivity=${Activity_NAME}</arg>
+<arg>appPackage=${PACKAGE_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220715 20:36:37.129" level="TRACE">Arguments: [ 'http://127.0.0.1:4723/wd/hub' | platformName='Android' | platformVersion='12.0' | deviceName='emulator-5554' | automationName='UiAutomator2' | newCommandTimeout='2500' | appActivity='com.android.calculator2.Calculator' | appPackage='com.android.calculator2' ]</msg>
+<msg timestamp="20220715 20:36:37.139" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:platformVersion": "12.0", "appium:deviceName": "emulator-5554", "appium:automationName": "UiAutomator2", "appium:newCommandTimeout": "2500", "appium:appActivity": "com.android.calculator2.Calculator", "appium:appPackage": "com.android.calculator2"}]}, "desiredCapabilities": {"platformName": "Android", "platformVersion": "12.0", "deviceName": "emulator-5554", "automationName": "UiAutomator2", "newCommandTimeout": "2500", "appActivity": "com.android.calculator2.Calculator", "appPackage": "com.android.calculator2"}}</msg>
+<msg timestamp="20220715 20:36:37.169" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220715 20:36:42.634" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 500 713</msg>
+<msg timestamp="20220715 20:36:42.636" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220715 20:36:42.637" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220715 20:36:42.640" level="FAIL">No application is open</msg>
+<msg timestamp="20220715 20:36:42.650" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 52, in open_application
+    application = webdriver.Remote(str(remote_url), desired_caps)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\appium\webdriver\webdriver.py", line 267, in __init__
+    super().__init__(
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\appium\webdriver\webdriver.py", line 357, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'app' option is required for reinstall
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenshot.py", line 31, in capture_page_screenshot
+    if hasattr(self._current_application(), 'get_screenshot_as_file'):
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 367, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20220715 20:36:42.636" endtime="20220715 20:36:42.650"/>
+</kw>
+<msg timestamp="20220715 20:36:42.652" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220715 20:36:42.655" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'app' option is required for reinstall
+</msg>
+<msg timestamp="20220715 20:36:42.656" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 52, in open_application
+    application = webdriver.Remote(str(remote_url), desired_caps)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\appium\webdriver\webdriver.py", line 267, in __init__
+    super().__init__(
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\appium\webdriver\webdriver.py", line 357, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\anggi\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'app' option is required for reinstall</msg>
+<status status="FAIL" starttime="20220715 20:36:37.128" endtime="20220715 20:36:42.656"/>
+</kw>
+<status status="FAIL" starttime="20220715 20:36:37.127" endtime="20220715 20:36:42.658"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'6')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220715 20:36:42.659" endtime="20220715 20:36:42.659"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'+')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220715 20:36:42.659" endtime="20220715 20:36:42.660"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'4')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220715 20:36:42.660" endtime="20220715 20:36:42.660"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'=')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220715 20:36:42.661" endtime="20220715 20:36:42.661"/>
+</kw>
+<status status="FAIL" starttime="20220715 20:36:37.126" endtime="20220715 20:36:42.662">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'app' option is required for reinstall
+</status>
+</test>
+<status status="FAIL" starttime="20220715 20:36:36.569" endtime="20220715 20:36:42.666"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Mobile">Mobile</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220715 20:36:42.652" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
